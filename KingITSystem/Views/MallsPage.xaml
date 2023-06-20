@@ -1,0 +1,42 @@
+﻿<Page x:Class="KingITSystem.Views.MallsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KingITSystem.Views"
+      mc:Ignorable="d" 
+      Background="AntiqueWhite"
+      d:DesignHeight="720" d:DesignWidth="1200"
+      Title="MallsPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="DGridMalls" Grid.Row="0" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Статус ТЦ" FontSize="18" Binding="{Binding MallStatuses.MallStatus}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Название ТЦ" FontSize="18" Binding="{Binding MallName}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Город" FontSize="18" Binding="{Binding Cities.CityName}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Стоимость постройки" FontSize="18" Binding="{Binding BuildingCost}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Этажность" FontSize="18" Binding="{Binding LevelsCount}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Коэф. доб. стоимости" FontSize="18" Binding="{Binding ValueAddedFactor}"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="EditButton" Height="50" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" Click="EditButton_Click">Редактировать</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <Button x:Name="AddButton" Width="250" Height="50" Click="AddButton_Click">Добавить</Button>
+            <Button x:Name="DeleteButton" Width="250" Height="50" Margin="20 0 20 0" Click="DeleteButton_Click">Удалить</Button>
+            <ComboBox x:Name="StatusesComboBox" Width="250" Height="50" DisplayMemberPath="MallStatus" SelectionChanged="StatusesComboBox_SelectionChanged"></ComboBox>
+            <ComboBox x:Name="CitiesComboBox" Width="250" Height="50" Margin="20 0 0 0" DisplayMemberPath="CityName" SelectionChanged="CitiesComboBox_SelectionChanged"></ComboBox>
+        </StackPanel>
+    </Grid>
+</Page>

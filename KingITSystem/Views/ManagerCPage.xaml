@@ -1,0 +1,24 @@
+﻿<Page x:Class="KingITSystem.Views.ManagerCPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KingITSystem.Views"
+      mc:Ignorable="d" 
+      Background="AntiqueWhite"
+      d:DesignHeight="720" d:DesignWidth="1200"
+      Title="ManagerCPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="MallsButton" Width="250" Click="MallsButton_Click">Торговые центры</Button>
+            <Button x:Name="PavilionsButton" Width="250" Click="PavilionsButton_Click">Павильоны</Button>
+        </StackPanel>
+        
+        <Frame x:Name="ManagerCFrame" Grid.Row="1" Source="MallsPage.xaml"></Frame>
+    </Grid>
+</Page>

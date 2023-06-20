@@ -1,0 +1,37 @@
+﻿<Page x:Class="KingITSystem.Views.AddPavilionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KingITSystem.Views"
+      mc:Ignorable="d" 
+      Background="AntiqueWhite"
+      d:DesignHeight="720" d:DesignWidth="1200"
+      Title="AddPavilionPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="GoBack" Click="GoBack_Click"  Grid.Row="0" Width="300" HorizontalAlignment="Left">Назад</Button>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Width="600">
+            <Label FontSize="18">ТЦ</Label>
+            <ComboBox x:Name="MallsComboBox" Height="30" DisplayMemberPath="MallName" SelectedItem="{Binding Malls}"></ComboBox>
+            <Label FontSize="18">Номер этажа</Label>
+            <TextBox Height="30" Text="{Binding LevelsCount}"></TextBox>
+            <Label FontSize="18">Номер павильона</Label>
+            <TextBox Height="30" Text="{Binding PavilionId}"></TextBox>
+            <Label FontSize="18">Площадь</Label>
+            <TextBox Height="30" Text="{Binding Area}"></TextBox>
+            <Label FontSize="18">Статус павильона</Label>
+            <ComboBox x:Name="PavilionStatusesComboBox" Height="30" DisplayMemberPath="PavilionStatus" SelectedItem="{Binding PavilionStatuses}"></ComboBox>
+            <Label FontSize="18">Стоимость кв. м.</Label>
+            <TextBox Height="30" Text="{Binding SquareMeterCost}"></TextBox>
+            <Label FontSize="18">Коэффициент добавочной стоимости ТЦ</Label>
+            <TextBox Height="30" Text="{Binding ValueAddedFactor}"></TextBox>
+            <Button x:Name="SaveButton" Height="40" Margin="0 10 0 0" Click="SaveButton_Click">Сохранить</Button>
+        </StackPanel>
+    </Grid>
+</Page>

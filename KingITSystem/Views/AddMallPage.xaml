@@ -1,0 +1,35 @@
+﻿<Page x:Class="KingITSystem.Views.AddMallPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KingITSystem.Views"
+      mc:Ignorable="d" 
+      Background="AntiqueWhite"
+      d:DesignHeight="720" d:DesignWidth="1200"
+      Title="AddMallPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="GoBack" Click="GoBack_Click" Grid.Row="0" Width="300" HorizontalAlignment="Left">Назад</Button>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Width="600">
+            <Label FontSize="18">Статус ТЦ</Label>
+            <ComboBox x:Name="StatusesComboBox" Height="30" DisplayMemberPath="MallStatus" SelectedItem="{Binding MallStatuses}"></ComboBox>
+            <Label FontSize="18">Название</Label>
+            <TextBox Height="30" Text="{Binding MallName}"></TextBox>
+            <Label FontSize="18">Стоимость постройки</Label>
+            <TextBox Height="30" Text="{Binding BuildingCost}"></TextBox>
+            <Label FontSize="18">Город</Label>
+            <ComboBox x:Name="CitiesComboBox" Height="30" DisplayMemberPath="CityName" SelectedItem="{Binding Cities}"></ComboBox>
+            <Label FontSize="18">Этажность</Label>
+            <TextBox Height="30" Text="{Binding LevelsCount}"></TextBox>
+            <Label FontSize="18">Коэффициент добавочной стоимости ТЦ</Label>
+            <TextBox Height="30" Text="{Binding ValueAddedFactor}"></TextBox>
+            <Button x:Name="SaveButton" Height="40" Margin="0 10 0 0" Click="SaveButton_Click">Сохранить</Button>
+        </StackPanel>
+    </Grid>
+</Page>
